@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Меню аккордион</title>
+</head>
+<body>
+   <style>
+      .container {
+         max-width: 1280px;
+         margin: 0 auto;
+         margin-top: 15px;
+      }
+      .accordion {
+         border: 2px solid black;
+         padding: 10px;
+         margin-top: 10px;
+      }
+      .content {
+         max-height: 0;
+         overflow: hidden;
+         transition: 0.3s ease-in-out;
+      }
+   </style>
+
+
+
+
+   <div class="container">
+      <div class="accordion">1.Что-то на китайском.</div>
+      <div class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae asperiores voluptatibus numquam deserunt mollitia aliquid ut ex dolor quam minus.</div>
+
+      <div class="accordion">2.Что-то на бельгийском.</div>
+      <div class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae asperiores voluptatibus numquam deserunt mollitia aliquid ut ex dolor quam minus.</div>
+
+      <div class="accordion">3.Что-то на испанском.</div>
+      <div class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae asperiores voluptatibus numquam deserunt mollitia aliquid ut ex dolor quam minus.</div>
+   </div>
+   
+
+
+
+
+   <script>
+      document.querySelectorAll('.accordion').forEach((el) => {
+         el.addEventListener('click', () => {
+
+            let content = el.nextElementSibling;
+            //console.log(content);
+
+            if(content.style.maxHeight) {
+               document.querySelectorAll('.content').forEach((el) => el.style.maxHeight = null)
+            } else {
+               document.querySelectorAll('.content').forEach((el) => el.style.maxHeight = null)
+               content.style.maxHeight = content.scrollHeight + 'px'
+            };
+         });
+      });
+   </script>
+</body>
+</html>
